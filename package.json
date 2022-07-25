@@ -42,12 +42,10 @@
     "url": "https://github.com/RainGaugeMedia/flow.git"
   },
   "scripts": {
-    "build": "npm run build:main && npm run build:umd && npm run build:min && npm run bundle:dts",
+    "build": "rgm build && npm run build:umd",
     "build:main": "tsc",
-    "build:min": "terser ./dist/umd/index.js -o ./dist/umd/index.min.js -c -m --source-map `content='./dist/umd/index.js.map'`",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:umd": "rollup -i ./src/index.ts -f umd -o ./dist/umd/index.js -p '@rollup/plugin-typescript={compilerOptions: {module: \"es6\"}}' -n raingauge -m",
-    "bundle:dts": "rollup -i ./dist/index.d.ts -f es -o ./dist/umd/index.d.ts -p rollup-plugin-dts",
+    "build:umd": "rollup -c",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src/**/*.ts",
     "preversion": "run-s typecheck format lint test",
