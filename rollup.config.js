@@ -18,7 +18,7 @@ const config = {
         file: `./dist/umd/index.js`,
         format: 'umd',
         globals: {
-          '@raingauge/utils': 'rainguage.utils'
+          '@raingauge/utils': 'raingauge.utils'
         },
         name: 'raingauge.flow',
         sourcemap: true
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV !== 'development') {
     file: `./dist/umd/index.min.js`,
     format: 'umd',
     globals: {
-      '@raingauge/utils': 'rainguage.utils'
+      '@raingauge/utils': 'raingauge.utils'
     },
     name: 'raingauge.flow',
     plugins: [terser()],
